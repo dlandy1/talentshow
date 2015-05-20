@@ -34,6 +34,24 @@ gem 'spring',        group: :development
 
 gem 'devise'
 
+gem 'omniauth'
+
+gem 'omniauth-twitter'
+
+gem 'omniauth-facebook'
+
+gem 'figaro'
+
+gem 'bootstrap-sass', '~> 3.2.0'
+
+gem 'bootswatch-rails'
+
+gem 'faker'
+
+gem 'friendly_id'
+
+gem "font-awesome-rails"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

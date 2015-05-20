@@ -1,0 +1,18 @@
+ <% @post_groups.each do |group,posts| %>
+    <%day=group[1].strftime("%A")%>
+    <%date=group[1].to_s%>
+    <div>
+    <% if date == Time.new.strftime("%Y-%m-%d") %>
+         <h2> Today <%=date%></h2>
+    <%else %>
+        <h2> <%=day%>  <%=date%></h2>
+    <% end %>
+    </div>
+
+    <br>
+
+    <%posts.each do |post|%>
+        <div><%=post.title%></div>
+    <%end%>
+    <hr>
+    <% end %>

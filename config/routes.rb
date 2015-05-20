@@ -1,5 +1,19 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
+
+  resources :users, except: [:destroy, :index] do
+  end
+  
+  resources :posts do
+    resources :comments,  only: [:create, :destroy, :edit, :update] do
+    end
+  end
+
+
+
+
+  root to: 'posts#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -54,5 +68,5 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-  root to: 'welcome#index'
+    match '/users/:id/finish_signup' => 'users#finish_signup', via: [:get, :patch], :as => :finish_signup
 end

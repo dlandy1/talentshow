@@ -1,0 +1,109 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @import "bootstrap-sprockets";
+
+// Import cerulean variables
+@import "bootswatch/cosmo/variables";
+
+// Then bootstrap itself
+@import "bootstrap";
+
+// Bootstrap body padding for fixed navbar
+body { padding-top: 80px; }
+
+// And finally bootswatch style itself
+@import "bootswatch/cosmo/bootswatch";
+@import url("//fonts.googleapis.com/css?family=Raleway:700");
+@import "font-awesome";
+
+
+ .size{
+    padding: 19px 6px;
+ }
+ .cali{
+  color: white;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+nav > p{
+  margin: 0px;
+}
+
+.cali:hover {
+  color: white;
+}
+
+a:hover{
+  text-decoration: none;
+}
+a:focus{
+  text-decoration: none;
+}
+.cali:focus {
+  color: white;
+}
+.navbar-default{
+    background-size: 30%;
+  background-image: url("img.png");
+  background-position: 18%;
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  box-shadow: 0px 2px 9px #4C4C4C;
+}
+.navbar-brand{
+  float: left;
+  padding: 14.5px 15px;
+  font-size: 20px;
+  line-height: 40px;
+  height: 70px;
+  margin: 0px;
+}
+.navbar-nav > li > a {
+  padding-top: 24.5px;
+  padding-bottom: 24.5px;
+  font-size: 16px;
+}
+.navbar-nav > .dropdown > a {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 16px;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: white;
+  background-color: rgba(9, 9, 9, 0.36);
+  outline:none;
+}
+.navbar-header > p:hover{
+    background-color: rgba(9, 9, 9, 0.36);
+}
+.circle{
+  padding: 7px 8px;
+  border-radius: 50%;
+  background-color: green;
+}
+.size{
+  padding: 20px 10px !important;
+}
+.imge{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  background-color: rgba(9, 9, 9, 0.36);
+  color: white;
+}
