@@ -3,16 +3,38 @@
     <%date=group[1].to_s%>
     <div>
     <% if date == Time.new.strftime("%Y-%m-%d") %>
-         <h2> Today <%=date%></h2>
+         <h3 class="dater"> TODAY <span class="small"> <%= Time.new.strftime("%m-%d") %> </span> </h3>
+     <% elsif date == Time.new.yesterday().strftime("%Y-%m-%d") %>
+        <h3 class="dater"> YESTERDAY <span class="small"> <%= Time.new.yesterday().strftime("%m-%d") %>  </span> </h3>
     <%else %>
-        <h2> <%=day%>  <%=date%></h2>
+        <h3 class="dater"> <%=day%>  <%=date%></h3>
     <% end %>
     </div>
 
-    <br>
-
-    <%posts.each do |post|%>
-        <div><%=post.title%></div>
-    <%end%>
+    <ul class="listing">
+        <%posts.each do |post|%>
+            <li style="padding: 10px 0;">
+                <div style="display: table; width: 100%">
+                    <div class="madle">
+                        <div>
+                            <%= image_tag("clap.png", class: "seez") %>
+                            <p class= "lor" style="text-align: center; margin: 0px;">12</p>
+                        </div>
+                    </div>
+                        <div style="display: table-cell;  vertical-align: middle;">
+                            <div style="margin-left: 5px;" class="inlines">
+                                <p class="spacey">
+                                    <span><%=post.title%></span>
+                                </p>
+                                <span><%=post.kind%></span>
+                            </div>
+                        </div>
+                        <div style="display: table-cell;  vertical-align: middle;">
+                            <%= image_tag('http://graph.facebook.com/890605104284789/picture', :alt => "a", class: "imge pull-right") %>
+                        </div>
+                </div>
+            </li>
+        <%end%>
+    </ul>
     <hr>
     <% end %>
