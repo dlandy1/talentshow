@@ -1,13 +1,13 @@
  <% @post_groups.each do |group,posts| %>
     <%day=group[1].strftime("%A")%>
-    <%date=group[1].to_s%>
+    <%date=group[1].strftime("%B %e")%>
     <div>
-    <% if date == Time.new.strftime("%Y-%m-%d") %>
-         <h3 class="dater"> TODAY <span class="small"> <%= Time.new.strftime("%m-%d") %> </span> </h3>
-     <% elsif date == Time.new.yesterday().strftime("%Y-%m-%d") %>
-        <h3 class="dater"> YESTERDAY <span class="small"> <%= Time.new.yesterday().strftime("%m-%d") %>  </span> </h3>
+    <% if date == Time.new.strftime("%B %e") %>
+         <h3 class="dater"> TODAY <span class="small"><%=date%> </span> </h3>
+     <% elsif date == Time.new.yesterday().strftime("%B %e") %>
+        <h3 class="dater"> YESTERDAY <span class="small"><%=date%> </span> </h3>
     <%else %>
-        <h3 class="dater"> <%=day%>  <%=date%></h3>
+        <h3 class="dater"> <%=day%>  <span class="small"><%=date%> </span></h3>
     <% end %>
     </div>
 
@@ -26,12 +26,14 @@
                                 <p class="spacey">
                                     <span><%=post.title%></span>
                                 </p>
-                                <span><%=post.kind%></span>
+                                <span class="type"><%=post.kind%></span>
                             </div>
+                        <div class="pull-right" style="margin-top: 11px;">
+                            <span class="numba"><%=post.comments.count%></span>
+                            <%= fa_icon("comment-o", class: "camnt") %>
+                            <%= image_tag('http://graph.facebook.com/890605104284789/picture', :alt => "a", class: "imge shorten") %>
                         </div>
-                        <div style="display: table-cell;  vertical-align: middle;">
-                            <%= image_tag('http://graph.facebook.com/890605104284789/picture', :alt => "a", class: "imge pull-right") %>
-                        </div>
+                    </div>
                 </div>
             </li>
         <%end%>

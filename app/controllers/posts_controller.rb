@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+   respond_to :html, :js
   def index
     @post_groups=Post.order('created_at DESC').group_by{|post| [post.created_at.wday,post.created_at.to_date]}
   end
@@ -12,9 +13,13 @@ class PostsController < ApplicationController
   def new
     if current_user != nil
       @post = Post.new
+      respond_with(@post) do |format|
+       format.html { redirect_to root_path}
+    end
+
      else
        flash[:error] = "You must sign in before posting an artist or performer."
-       redirect_to new_user_session_path
+      redirect_to new_user_session_path 
     end
   end
 

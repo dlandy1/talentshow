@@ -58,7 +58,7 @@ GEM
       thor (~> 0.14)
     font-awesome-rails (4.2.0.0)
       railties (>= 3.2, < 5.0)
-    friendly_id (5.0.4)
+    friendly_id (5.1.0)
       activerecord (>= 4.0.0)
     hashie (3.3.1)
     hike (1.2.3)
@@ -179,7 +179,7 @@ DEPENDENCIES
   faker
   figaro
   font-awesome-rails
-  friendly_id
+  friendly_id (~> 5.1.0)
   jbuilder (~> 2.0)
   jquery-rails
   omniauth

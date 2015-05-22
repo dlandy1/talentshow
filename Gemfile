@@ -48,7 +48,7 @@ gem 'bootswatch-rails'
 
 gem 'faker'
 
-gem 'friendly_id'
+gem 'friendly_id', '~> 5.1.0'
 
 gem "font-awesome-rails"
 

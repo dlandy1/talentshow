@@ -22,7 +22,10 @@
 @import "bootstrap";
 
 // Bootstrap body padding for fixed navbar
-body { padding-top: 70px; }
+body { 
+  padding-top: 70px; 
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+}
 
 // And finally bootswatch style itself
 @import "bootswatch/cosmo/bootswatch";
@@ -94,6 +97,7 @@ a:focus{
   padding: 7px 8px;
   border-radius: 50%;
   background-color: #87D25A;
+    color: rgb(255, 253, 65);
   box-shadow: 2px 2px 0px 1px rgba(0, 0, 0, 0.51), 3px 3px 1px 1px rgba(0, 0, 0, 0.49);
 }
 .size{
@@ -152,6 +156,9 @@ a:focus{
 }
 .spacey{
   margin: 0 0 3.5px;
+    font-size: 19px;
+  font-weight: bolder;
+    color: #525252;
 }
 .container{
   max-width: 960px;
@@ -165,7 +172,7 @@ a:focus{
   float: right !important;
 }
 .navbar-nav.navbar-right:last-child {
-  margin-right: -15px;
+  margin-right: 0px;
 }
 .navbar-header {
   float: left;
@@ -179,6 +186,7 @@ a:focus{
 }
 .navbar-nav > li {
   float: left;
+  font-weight: bold;
 }
 .navbar-right .dropdown-menu {
   right: 0;
@@ -215,4 +223,39 @@ a:focus{
 .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
   color: white;
   background-color: #D1FFB6;
+}
+@media (max-width: 500px){
+  .container{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .navbar-brand{
+    font-size: 20px;
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+  .navbar-nav.navbar-right > li:last-child {
+  display: none;
+  }
+  #third{
+    padding-right: 0px;
+  }
+}
+.camnt{
+  margin-right: 15px;
+    color: rgb(52, 240, 0);
+  font-size: 22px;
+}
+.shorten{
+  margin-top: -8px;
+}
+.numba{
+  color: #47B508;
+  font-family: fantasy;
+  font-weight: bolder;
+}
+.type{
+    font-size: 16px;
+  font-weight: 600;
+    color: #9B9B9B;
 }
