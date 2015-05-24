@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+  *= require jquery-ui/resizable
  */
  @import "bootstrap-sprockets";
 
@@ -259,3 +260,46 @@ a:focus{
   font-weight: 600;
     color: #9B9B9B;
 }
+.post{
+    z-index: 10000;
+  position: absolute !important;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  left: 100%;
+    background-color: white;
+  box-shadow: -1px 0px 2px 0px rgba(0,0,0,0.25);
+}
+.no-scroll{
+  overflow: hidden !important;
+}
+.screen{
+    position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  z-index: 100;
+  background: rgba(255,255,255,0.8);
+}
+.pads{
+  padding: 20px;
+}
+.ban{
+  background-color: rgb(125, 228, 122);
+  height: 72px;
+    text-align: center;
+  color: rgb(255, 255, 255);
+  font-size: 25px;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.bood{
+    color: rgb(126, 126, 126);
+    font-size: 19px;
+}
+#loading{
+  display: none;
+  height: 100%;
+  width: 100%;
+}
+

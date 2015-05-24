@@ -1,12 +1,13 @@
 $('body').append("<div class='screen'></div>");
-  $('.post').animate({
-      width: "60%",
-      left: "40%"
-    }, 200);
  $('body').addClass('no-scroll');
- $('.post').html("<div class='pads ban'>Post a Talented Performer or Artist.</div><%= escape_javascript(render partial: 'form', locals: { post: @post }) %>");
- $('.screen').click(function() { 
+  $('.post').html("<%= Post.all %>")
+   $('.post').resizable({
+    handles: 'w'
+});
+
+   $('.screen').click(function() { 
   $('body').removeClass('no-scroll')
+  $('.post').resizable("destroy");
   $('.post').animate({
       left: "100%"
     }, 200);

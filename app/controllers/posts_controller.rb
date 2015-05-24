@@ -8,6 +8,9 @@ class PostsController < ApplicationController
     @post = Post.friendly.find(params[:id])
     @comments = @post.comments
     @comment = Comment.new
+    respond_with(@post) do |format|
+       format.html { redirect_to root_path}
+    end
   end
 
   def new
@@ -30,10 +33,10 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
-      redirect_to post_path(@post)
     else
-      flash[:error] = "There was an error saving the post. Please try again."
-      render :edit
+    end
+    respond_with(@post) do |format|
+      format.html { redirect_to [@post] }
     end
   end
 

@@ -13,4 +13,14 @@
 //= require jquery
 // = require bootstrap-sprockets
 //= require jquery_ujs
+//= require jquery-ui/resizable
 //= require_tree .
+jQuery(document).ready(function () {
+  $( "ul.listing > a > li" ).click(function(){
+    $('.post').animate({
+      width: "60%",
+      left: "40%"
+    }, 50);
+  });
+
+});

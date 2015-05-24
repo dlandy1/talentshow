@@ -1,0 +1,32 @@
+<%= form_for [ post ], :html => {:class => "pads"}, remote: true do |f| %>
+     <% if post.errors.any? %>
+      <div class="alert alert-danger">
+        <h4>There are <%= pluralize(post.errors.count, "error") %></h4>
+        <ul>
+          <% post.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+     <% end %>
+
+    
+
+    <div class="form-group">
+      <%= f.label :title %>
+      <%= f.text_field :title, class: 'form-control', placeholder: "Name of Performer e.g. John Mayer " %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :kind %>
+      <%= f.text_field :kind, class: 'form-control', placeholder: "Type of Performer e.g. Country Singer " %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :url %>
+      <%= f.text_field :url, class: 'form-control', placeholder: "Make sure link has http at the start! Add link of a work or portfolio." %>
+    </div>
+    <div class="form-group">
+      <%= f.submit "Save", class: 'btn btn-success' %>
+    </div>
+ <% end %>
