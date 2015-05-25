@@ -54,6 +54,8 @@ gem "font-awesome-rails"
 
 gem 'jquery-ui-rails'
 
+gem 'redis'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

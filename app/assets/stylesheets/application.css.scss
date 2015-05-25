@@ -262,7 +262,7 @@ a:focus{
 }
 .post{
     z-index: 10000;
-  position: absolute !important;
+  position: fixed !important;
   right: 0;
   top: 0;
   bottom: 0;
@@ -302,4 +302,36 @@ a:focus{
   height: 100%;
   width: 100%;
 }
-
+.pod{
+  background-color: #659974;
+  padding: 8px;
+  font-size: 21px;
+  color: white;
+  font-size: 25px;
+  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.cor{
+  color: #f74d4d;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: bolder;
+  font-size: 18px;
+}
+.pod > .pull-left {
+  margin-right: 10px;
+  height: 100px;
+}
+.pod > p{
+  margin: 0px;
+}
+.pod > a{
+   padding: 5px 15px;
+  border-radius: 50px;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  background-color: rgb(209, 255, 182);
+  color: rgb(253, 101, 101);
+}
+.pod > a:hover{
+     background-color: rgb(166, 215, 137);
+}

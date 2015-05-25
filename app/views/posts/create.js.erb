@@ -1,5 +1,5 @@
 <% if @post.valid? %>
-  $('.post').html("<div class='pads ban'>Thanks for Posting!</div> <div class='pads bood'> <p class='text-center'> </p><br> Your post <b>won't show up initially</b>. An admin has to accept it. We will notify you if it goes up. If your <b> post never goes up</b>, it means the <b>content was not right for the site </b>  </div>");
+  $('.post').html("<div class='pads ban'>Thanks for Posting!</div> <div class='pads bood'> <p class='text-center'> </p><br> Your post <b>won't show up initially</b>. An admin has to accept it. We will notify you if it goes up. If your <b> post never goes up</b>, it means the <b>content was not right for the site.</b>  </div>");
  <% else %>
  $('.post').html("<%= escape_javascript(render partial: 'form', locals: { post: @post }) %>");
 <% end %>

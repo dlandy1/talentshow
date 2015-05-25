@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150522051259) do
+ActiveRecord::Schema.define(version: 20150525210039) do
 
   create_table "artists", force: true do |t|
     t.integer  "user_id"
@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 20150522051259) do
     t.integer  "user_id"
     t.integer  "artist_id"
     t.string   "slug"
+    t.float    "rank"
   end
 
   add_index "posts", ["artist_id"], name: "index_posts_on_artist_id"

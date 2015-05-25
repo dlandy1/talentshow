@@ -1,5 +1,5 @@
  <div class="post"><%= image_tag("showtime.gif", id: 'loading' )%></div>
- <% @post_groups.each do |group,posts| %>
+ <% @sorted_groups.each do |group,posts| %>
     <%day=group[1].strftime("%A")%>
     <%date=group[1].strftime("%B %e")%>
     <div>

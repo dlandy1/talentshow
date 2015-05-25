@@ -1,6 +1,8 @@
 $('body').append("<div class='screen'></div>");
  $('body').addClass('no-scroll');
-  $('.post').html("<%= Post.all %>")
+  $('.post').html("<div class='pod'><div class= 'pull-left'><div class='madle'> </div></div><%= @post.title %><p><%= @post.kind %></p></div>");
+  $('.pod').append('<%= link_to "View Work", @post.url %>');
+  $('.pull-left > .madle').append('<%= image_tag("clap.png", class: "seez") %> <p class= "cor" style="text-align: center; margin: 0px;">12</p>');
    $('.post').resizable({
     handles: 'w'
 });
