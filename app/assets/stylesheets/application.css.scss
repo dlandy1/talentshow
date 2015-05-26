@@ -66,6 +66,7 @@ a:focus{
   width: 100%;
   top: 0px;
   box-shadow: 0px 2px 9px #4C4C4C;
+    background-color: rgb(154, 19, 14);
 }
 .navbar-brand{
   float: left;
@@ -303,7 +304,7 @@ a:focus{
 }
 .pod{
   background-color: #659974;
-  padding: 8px;
+  padding: 15px;
   font-size: 21px;
   color: white;
   font-size: 25px;
@@ -316,13 +317,10 @@ a:focus{
   font-size: 18px;
 }
 .pod > .pull-left {
-  margin-right: 10px;
+  margin-right: 20px;
   height: 100px;
 }
-.pod > p{
-  margin: 0px;
-}
-.pod > a{
+.pod > p > a{
    padding: 5px 15px;
   border-radius: 50px;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -331,6 +329,17 @@ a:focus{
   background-color: rgb(209, 255, 182);
   color: rgb(253, 101, 101);
 }
-.pod > a:hover{
+.pod > p > a:hover{
      background-color: rgb(166, 215, 137);
 }
+.pod > span {
+    color: #D9FFD8;
+    font-size: 18px;
+    margin-left: 5px;
+}
+
+
+
+
+
+

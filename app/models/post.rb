@@ -26,10 +26,11 @@ class Post < ActiveRecord::Base
     def remove_vote!(voting_user)
       vote_manager = VotesManager.new(voting_user, self)
       vote_manager.remove_vote!
+      update_rank
     end
 
 
-    def already_voted_by_user?(voting_user)
+    def already_voted?(voting_user)
       vote_manager = VotesManager.new(voting_user, self)
       vote_manager.already_voted?
     end

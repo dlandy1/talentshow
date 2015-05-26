@@ -5,12 +5,10 @@ Rails.application.routes.draw do
   end
   
   resources :posts do
+    post '/vote' => 'votes#vote', as: :vote
     resources :comments,  only: [:create, :destroy, :edit, :update] do
     end
   end
-
-
-
 
   root to: 'posts#index'
 

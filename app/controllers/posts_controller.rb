@@ -10,7 +10,6 @@ class PostsController < ApplicationController
     @comments = @post.comments
     @comment = Comment.new
     respond_with(@post) do |format|
-       format.html { redirect_to root_path}
     end
   end
 
@@ -18,9 +17,8 @@ class PostsController < ApplicationController
     if current_user != nil
       @post = Post.new
       respond_with(@post) do |format|
-       format.html { redirect_to root_path}
+      
     end
-
      else
        flash[:error] = "You must sign in before posting an artist or performer."
       redirect_to new_user_session_path 

@@ -1,0 +1,9 @@
+<div class="madle">
+  <%= link_to post_vote_path(post), id: "vote-#{post.id}", method: :post, remote: :true do %> 
+    <div>
+        <%= image_tag("clap.png", class: "seez") %>
+        <p class= "lor" id= "count-<%=post.id%>" style="text-align: center; margin: 0px;"><%=post.points%>
+        </p> 
+    </div>
+  <% end %>
+</div>

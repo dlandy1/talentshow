@@ -1,0 +1,9 @@
+<% if @post.already_voted?(current_user) == true %>
+  $('#vote-'+<%= @post.id %>).css('background-color', 'grey');
+  var num = parseInt($('#count-'+<%= @post.id %>).text());
+  $('#count-'+<%= @post.id %>).text(num+1);
+<% else %>
+ $('#vote-'+<%= @post.id %>).css('color', '#9E916A');
+ var num = parseInt($('#count-'+<%= @post.id %>).text());
+  $('#count-'+<%= @post.id %>).text(num-1);
+<% end %>

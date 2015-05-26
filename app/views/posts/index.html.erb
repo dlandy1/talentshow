@@ -18,12 +18,7 @@
             <%= link_to post_path(post), method: :get, remote: :true do%>
                 <li style="padding: 10px 0;">
                     <div style="display: table; width: 100%;">
-                        <div class="madle">
-                            <div>
-                                <%= image_tag("clap.png", class: "seez") %>
-                                <p class= "lor" style="text-align: center; margin: 0px;">12</p>
-                            </div>
-                        </div>
+                        <%= render partial: 'votes/vote', locals: {post: post} %>
                             <div style="display: table-cell;  vertical-align: middle;">
                                 <div style="margin-left: 5px;" class="inlines">
                                     <p class="spacey">

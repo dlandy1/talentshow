@@ -26,7 +26,8 @@
           </ul>
             </li> 
         <% end %>
-         <li> <%= link_to new_post_path, class: "size", method: :get, remote: :true do %> <span><%= fa_icon "star", class: "circle" %> </span> Post <% end %> </li>
+
+         <li> <% if current_user %> <%= link_to new_post_path, class: "size", method: :get, remote: :true do %> <span><%= fa_icon "star", class: "circle" %> </span> Post <% end %> <% else %> <%= link_to new_post_path, class: "size" do %> <span><%= fa_icon "star", class: "circle" %> </span> Post <% end %> <% end %>  </li>
       </ul>
   </div>
 </nav>

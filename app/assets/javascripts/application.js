@@ -23,4 +23,15 @@ jQuery(document).ready(function () {
     }, 50);
   });
 
+    $('.screen').click(function() { 
+ history.replaceState(null, "A new title!", "/");
+  $('body').removeClass('no-scroll')
+  $('.post').animate({
+      left: "100%"
+    }, 200);
+  $('.post').html('<img id="loading" src="assets/showtime.gif" />')
+  $('.screen').remove();  
+
+});     
+
 });
