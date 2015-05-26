@@ -85,4 +85,7 @@ FriendlyId.defaults do |config|
   #     text.to_slug.normalize! :transliterations => [:russian, :latin]
   #   end
   # }
+
+
+
 end

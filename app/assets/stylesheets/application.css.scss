@@ -337,9 +337,34 @@ a:focus{
     font-size: 18px;
     margin-left: 5px;
 }
+.url{
+  cursor: pointer;
+}
 
+.url:hover{
+  text-decoration: underline;
+}
+.item{
+  padding: 6px 10px;
+  margin: 0 -10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.listing > li:hover {
+ background-color: rgb(255, 240, 229);
+}
 
+.voted{
+  background-color: rgb(244, 243, 187);
+}
 
-
-
+.votedd{
+  color: grey;
+}
+.madle:hover{
+  background-color: rgb(244, 243, 187);
+}
+.pull-left > .madle{
+  width: 41px;
+}
 

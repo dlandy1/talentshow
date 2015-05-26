@@ -10,6 +10,7 @@ gem 'rails', '4.1.4'
  end
  
  group :development do
+   gem 'sqlite3_ar_regexp', '~> 2.1'
    gem 'sqlite3'
  end
 # Use SCSS for stylesheets

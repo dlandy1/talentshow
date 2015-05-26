@@ -16,12 +16,14 @@
 //= require jquery-ui/resizable
 //= require_tree .
 jQuery(document).ready(function () {
-  $( "ul.listing > a > li" ).click(function(){
+  $( ".open" ).click(function(){
     $('.post').animate({
       width: "60%",
       left: "40%"
     }, 50);
   });
+
+  
 
     $('.screen').click(function() { 
  history.replaceState(null, "A new title!", "/");
@@ -31,7 +33,9 @@ jQuery(document).ready(function () {
     }, 200);
   $('.post').html('<img id="loading" src="assets/showtime.gif" />')
   $('.screen').remove();  
-
-});     
+});
+     $('.url').click(function() { 
+        window.open($('.url').attr('id'));
+     });
 
 });

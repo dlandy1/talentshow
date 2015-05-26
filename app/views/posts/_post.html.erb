@@ -1,0 +1,20 @@
+            <li class= "item">
+                    <div style="display: table; width: 100%;">
+                       <%= render partial: 'votes/vote', locals: { post: post } %>
+                        <%= link_to post_path(post), method: :get, remote: :true do%>
+                                <div class="open" style="padding: 7px 5px;">
+                                    <div style="margin-left: 5px;" class="inlines">
+                                        <p class="spacey">
+                                            <span class="url" id="<%=post.url%>"><%=post.title%></span>
+                                        </p>
+                                        <span class="type"><%=post.kind%></span>
+                                    </div>
+                                    <div class="pull-right" style="margin-top: 11px;">
+                                        <span class="numba"><%=post.comments.count%></span>
+                                        <%= fa_icon("comment-o", class: "camnt") %>
+                                        <%= image_tag(post.user.image, class: "imge shorten") %>
+                                    </div>
+                                </div>
+                        <%end%>
+                    </div>
+                </li>

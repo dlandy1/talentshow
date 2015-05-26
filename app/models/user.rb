@@ -7,12 +7,32 @@ class User < ActiveRecord::Base
    TEMP_EMAIL_PREFIX = 'change@me'
   TEMP_EMAIL_REGEX = /\Achange@me/
 
+    friendly_id :slug_candidates, use: :slugged
+
+  validates :name, presence: true, uniqueness: { case_sensitive: false }
+  validates :slug, uniqueness: true
+
   # Include default devise modules. Others available are:
   # :lockable, :timeoutable
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
   validates_format_of :email, :without => TEMP_EMAIL_REGEX, on: :update
+
+    def slug_candidates
+    [:name, [:name, :id_for_slug]]
+  end
+
+  def id_for_slug
+    generated_slug = normalize_friendly_id(name)
+    things = self.class.where('slug REGEXP :pattern', pattern: "#{generated_slug}(-[0-9]+)?$")
+    things = things.where.not(id: id) unless new_record?
+    things.count + 1
+  end
+
+  def should_generate_new_friendly_id?
+    name_changed? || super
+  end
 
   def self.find_for_oauth(auth, signed_in_resource = nil)
 

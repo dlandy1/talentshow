@@ -15,27 +15,8 @@
 
     <ul class="listing">
         <%posts.each do |post|%>
-            <%= link_to post_path(post), method: :get, remote: :true do%>
-                <li style="padding: 10px 0;">
-                    <div style="display: table; width: 100%;">
-                        <%= render partial: 'votes/vote', locals: {post: post} %>
-                            <div style="display: table-cell;  vertical-align: middle;">
-                                <div style="margin-left: 5px;" class="inlines">
-                                    <p class="spacey">
-                                        <span><%=post.title%></span>
-                                    </p>
-                                    <span class="type"><%=post.kind%></span>
-                                </div>
-                            <div class="pull-right" style="margin-top: 11px;">
-                                <span class="numba"><%=post.comments.count%></span>
-                                <%= fa_icon("comment-o", class: "camnt") %>
-                                <%= image_tag('http://graph.facebook.com/890605104284789/picture', :alt => "a", class: "imge shorten") %>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-            <%end%>
-        <%end%>
+                <%= render partial: 'post', locals: { post: post } %>
+        <% end %>
     </ul>
     <hr>
     <% end %>
