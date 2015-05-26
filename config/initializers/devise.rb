@@ -243,8 +243,6 @@ Devise.setup do |config|
   #   manager.default_strategies(scope: :user).unshift :some_external_strategy
   # end
 
-  Devise.secret_key was not set. Please add the following to your Devise initializer:
-
   config.secret_key = 'e0bc518e5cd69397ddf1eb7e46760de68d2631754ec7f360e2983c4c37163eee09668be8af0a9e167f7a5462965cb4127bdf8318dddf607844db263fe93507f1'
 
   # ==> Mountable engine configurations
