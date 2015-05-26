@@ -8,12 +8,13 @@ class CommentsController < ApplicationController
     @new_comment = Comment.new
 
     if current_user
-      if @comment.save
-      else
-        flash[:error] = "Error creating comment."
+        if @comment.save
+        else
+          flash[:error] = "Error creating comment."
+        end
+      respond_with(@comment) do |format|
+        format.html { redirect_to [@post] }
       end
-    respond_with(@comment) do |format|
-      format.html { redirect_to [@post] }
     end
   end
 
