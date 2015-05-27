@@ -3,19 +3,20 @@
 <div class="pod">
   <div class="pull-left">                        
   <%= render partial: 'votes/vote', locals: { post: post } %>
-    </div><%= link_to post.title, @post.url,  :target => "_blank", class: 'white' %>
-      <span><%= post.kind %></span>
+    </div><%= link_to @post.title, @post.url,  :target => "_blank", class: 'white' %>
+      <span><%= @post.kind %></span>
       <p>
        <%= link_to "View Work", @post.url,  :target => "_blank" %>
      </p>
    </div>
 
-   <% if @post.url.index("youtube") ||  @post.url.index("vimeo") ||  @post.url.index("soundcloud") %>
+   <% if @post.url.index("youtube/watch") ||  @post.url.index("vimeo") ||  @post.url.index("soundcloud") %>
       <div class="text-center" style="background-color: black;">
            <%= @post.url_html %>
       </div>
     <% end %>
    <div class="social">
+    <div class="pull-left"><%= link_to user_path(@user) do %>  <%= image_tag(@user.image, class: 'imooge') %> <%= @user.name %>   <% end %></div>
      <div class=" pull-right">
       <div class="fb-share-button" data-href="http://localhost:3000/posts/justin-bier" data-layout="button"></div>
         <a href="https://twitter.com/share" class="twitter-share-button" data-via="DanOliverLandy" data-count="none">Tweet</a>
@@ -23,7 +24,7 @@
     </div>
   </div>
    <% post.voters.each do |v| %>
-    <p> <%= v.name %>
-    <%= image_tag(v.image) %>
+    <p> <%= link_to v.name, user_path(v) %>
+    <%= image_tag(v.image, class: 'imooge') %>
   </p>
   <% end %>

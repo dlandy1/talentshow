@@ -1,4 +1,4 @@
-history.replaceState(null, "A new title!", "/posts/<%= @post.slug %>");
+history.replaceState( "posts" , "A new title!", "/posts/<%= @post.slug %>");
 document.title = '<%= @post.title %>';
 $('body').append("<div class='screen'></div>");
  $('body').addClass('no-scroll');

@@ -319,7 +319,6 @@ a:focus{
 }
 .pod > .pull-left {
   margin-right: 20px;
-  height: 100px;
 }
 .pod > p > a{
    padding: 5px 15px;
@@ -395,7 +394,9 @@ a:focus{
 .pod > p {
   margin: 12px 0 3px;
 }
-.text-center > p > iframe {
-    margin-top: -17px;
+
+.imooge{
+    height: 25px;
+  border-radius: 50%;
 }
 

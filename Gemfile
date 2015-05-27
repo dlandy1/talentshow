@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.4'
+gem 'rails', '4.2.1'
 # Use sqlite3 as the database for Active Record
  group :production do
    gem 'pg'
@@ -12,6 +12,7 @@ gem 'rails', '4.1.4'
  group :development do
    gem 'sqlite3_ar_regexp', '~> 2.1'
    gem 'sqlite3'
+   gem 'brakeman', :require => false
  end
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'

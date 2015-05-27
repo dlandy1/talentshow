@@ -7,6 +7,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.friendly.find(params[:id])
+    @user = @post.user
     @comments = @post.comments
     @comment = Comment.new
     respond_with(@post) do |format|
