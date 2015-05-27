@@ -12,6 +12,16 @@ class Post < ActiveRecord::Base
   validates :title, presence: true, uniqueness: { case_sensitive: false }
   validates :slug, uniqueness: true
 
+  auto_html_for :url do
+    html_escape
+    image
+    soundcloud width: "100%"
+    youtube width: "100%", height: 430
+    vimeo width: "100%", height: 430
+    link :target => "_blank", :rel => "nofollow"
+    simple_format
+  end
+
   def slug_candidates
     [:title, [:title, :id_for_slug]]
   end

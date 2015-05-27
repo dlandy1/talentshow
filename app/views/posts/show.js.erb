@@ -7,6 +7,7 @@ $('body').append("<div class='screen'></div>");
     handles: 'w'
 });
 
+
   $('.screen').click(function() { 
  history.replaceState(null, "A new title!", "/");
   $('body').removeClass('no-scroll')
@@ -15,6 +16,8 @@ $('body').append("<div class='screen'></div>");
       left: "100%"
     }, 200);
   $('.post').html('<img id="loading" src="assets/showtime.gif" />')
-  $('.screen').remove();  
-
-})     
+  $('.screen').remove(); 
+ 
+});
+FB.XFBML.parse($(".scoial")[0]);     
+twttr.widgets.load();

@@ -1,25 +1,29 @@
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=1427297504244269";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+
 
 <div class="pod">
   <div class="pull-left">                        
   <%= render partial: 'votes/vote', locals: { post: post } %>
-    </div><%= post.title %>
+    </div><%= link_to post.title, @post.url,  :target => "_blank", class: 'white' %>
       <span><%= post.kind %></span>
       <p>
        <%= link_to "View Work", @post.url,  :target => "_blank" %>
      </p>
    </div>
-   <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button"></div>
-   <a href="https://twitter.com/share" class="twitter-share-button" data-hashtags="talented">Tweet</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-   <%= post.voters.each do |v| %>
-    <%= v.name %>
+
+   <% if @post.url.index("youtube") ||  @post.url.index("vimeo") ||  @post.url.index("soundcloud") %>
+      <div class="text-center" style="background-color: black;">
+           <%= @post.url_html %>
+      </div>
+    <% end %>
+   <div class="social">
+     <div class=" pull-right">
+      <div class="fb-share-button" data-href="http://localhost:3000/posts/justin-bier" data-layout="button"></div>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-via="DanOliverLandy" data-count="none">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </div>
+  </div>
+   <% post.voters.each do |v| %>
+    <p> <%= v.name %>
     <%= image_tag(v.image) %>
+  </p>
   <% end %>
