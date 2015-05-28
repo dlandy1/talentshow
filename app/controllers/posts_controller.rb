@@ -6,9 +6,13 @@ class PostsController < ApplicationController
   end
 
   def show
+    response.headers["Cache-Control"] = "no-cache, no-store, max-age=0, must-revalidate"
+    response.headers["Pragma"] = "no-cache"
+    response.headers["Expires"] = "Fri, 01 Jan 1990 00:00:00 GMT"
     @post = Post.friendly.find(params[:id])
     @user = @post.user
     @comments = @post.comments
+    @voters = Kaminari.paginate_array(@post.voters).page(params[:page]).per(20)
     @comment = Comment.new
     respond_with(@post) do |format|
     end

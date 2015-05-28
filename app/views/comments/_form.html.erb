@@ -1,0 +1,12 @@
+
+<%= form_for [post, comment], remote: true do |f| %>
+  <div class="form-group">
+    <div class="donl">
+      <%= f.text_area :body, rows: 4, class: 'form-control'%>
+    </div>
+    <div style="
+    text-align: left;">
+      <%= f.submit "Create Comment", class: 'btn btn-success'%>
+    </div>
+  </div>
+<% end %>

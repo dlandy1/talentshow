@@ -1,0 +1,3 @@
+if($("#form-" +<%= @comment.id%>).length == 0) {
+   $('#new-' +<%= @comment.id%>).append("<%= escape_javascript(render partial: 'comments/formthree', locals: { post: @post, comment: @new_comment  }) %>").fadeIn(500); 
+}

@@ -1,0 +1,35 @@
+<%= content_tag :div, id: "comment-#{comment.id}", class: "indont" do %>
+  <div>
+  <%= link_to '#', class: 'pull-left commentprof' do %>
+    <%= image_tag(comment.user.image, class: "mage") %>
+  <% end %>
+  <div class='media-body'>
+    <div class="loft">
+    <small class="cament">
+     <b><%= comment.user.name %></b> commented <%= time_ago_in_words(comment.created_at) %> ago
+      <div class="trosh">
+        <% if current_user %>
+        <%= link_to "reply", post_comment_reply_path( comment.post, comment) ,method: :get, class: 'reply', remote: true%>
+        <% if current_user == comment.user || current_user.id == 1 %>
+        <%= link_to edit_post_comment_path(comment.post, comment) ,class: 'flant' do %>
+        <%= fa_icon "pencil" %>
+       <% end %> 
+       <%= link_to [ comment.post, comment] ,method: :delete, data: { confirm: 'Are you sure you want to delete this comment?'}, remote: true  do %>
+        <%= fa_icon "trash-o" %>
+       <% end %> 
+      <% end %>
+      <% else %>
+        <%= link_to "reply", new_user_session_path , class: 'reply'%> 
+      <% end %> 
+      </div>
+    </small>
+    </div>
+    <p class="dint"><%= comment.body%></p> 
+      </div>
+    <%= content_tag :div, id: "response-#{comment.id}" do %>
+      <%= render partial: 'comments/response', collection: comment.subcomments, as: :subcomment %>
+    <% end %>
+    <%= content_tag :div, id: "new-#{comment.id}" do %>
+    <% end %>
+  </div>
+<% end %>

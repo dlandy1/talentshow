@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   resources :posts do
     post '/vote' => 'votes#vote', as: :vote
     resources :comments,  only: [:create, :destroy, :edit, :update] do
+      get "/reply"  => 'comments#reply', as: :reply
+      get "/cancel"  => 'comments#cancel', as: :cancel
     end
   end
 

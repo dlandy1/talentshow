@@ -1,14 +1,19 @@
 history.replaceState( "posts" , "A new title!", "/posts/<%= @post.slug %>");
 document.title = '<%= @post.title %>';
+if($('.screen').length == 0){
 $('body').append("<div class='screen'></div>");
  $('body').addClass('no-scroll');
-  $('.post').html('<%= escape_javascript(render partial: "box", locals: { post: @post }) %>');
+ $('.post').html('<%= escape_javascript(render partial: "box", locals: { post: @post }) %>');
    $('.post').resizable({
     handles: 'w'
 });
+    };
+$('.spooc').html('<%= escape_javascript(render partial: "votercount", locals: { post: @post }) %>');
+$('.horiz').append("<%= escape_javascript(link_to_next_page(@voters, fa_icon('caret-right'), :remote => true, :id=>'load_more_link'))%>");
+$('.horiz').prepend("<%= escape_javascript(link_to_previous_page(@voters, fa_icon('caret-left'), :remote => true, :id=>'load_more_link'))%>");
 
 
-  $('.screen').click(function() { 
+  $('.screen, .clicker').click(function() { 
  history.replaceState(null, "A new title!", "/");
   $('body').removeClass('no-scroll')
   $('.post').resizable("destroy");

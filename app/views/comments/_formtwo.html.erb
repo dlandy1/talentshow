@@ -1,0 +1,10 @@
+<%= form_for [ post, comment] do |f| %>
+  <div class="form-group">
+    <div>
+      <%= f.text_area :body, rows: 4, class: 'form-control'%>
+    </div>
+    <div class="v">
+      <%= f.submit "Update Comment", class: 'btn btn-default'%>
+    </div>
+  </div>
+<% end %>

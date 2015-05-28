@@ -1,0 +1,18 @@
+<%= content_tag :span, id: "form-#{@comment.id}" do %>
+<%= form_for [ post, comment], remote: true do |f| %>
+  <div class="form-group teen">
+    <div class="donl">
+      <%= f.text_area :body, rows: 4, class: 'form-control'%>
+    </div>
+      <div class="form-group hide">
+        <%= f.label :parent_id %>
+        <%= f.select :parent_id, options_from_collection_for_select(post.comments.all, "id", "body", @comment.id)%>
+      </div>
+    <div style="
+    text-align: left;">
+      <%= f.submit "Respond", class: 'btn btn-success'%>
+      <%= link_to "Cancel", post_comment_cancel_path( @comment.post, @comment) ,method: :get, class: 'btn btn-default',remote: true %>
+    </div>
+  </div>
+<% end %>
+<% end %>
