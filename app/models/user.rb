@@ -1,13 +1,13 @@
 class User < ActiveRecord::Base
     extend FriendlyId
-    friendly_id :name, use: :slugged
+    friendly_id :slug_candidates, use: :slugged
   has_many :comments, dependent: :destroy
   has_many :posts, dependent: :destroy
   has_one :identity, dependent: :destroy
    TEMP_EMAIL_PREFIX = 'change@me'
   TEMP_EMAIL_REGEX = /\Achange@me/
 
-    friendly_id :slug_candidates, use: :slugged
+    
 
   validates :name, presence: true, uniqueness: { case_sensitive: false }
   validates :slug, uniqueness: true
@@ -19,23 +19,21 @@ class User < ActiveRecord::Base
 
   validates_format_of :email, :without => TEMP_EMAIL_REGEX, on: :update
 
-    def slug_candidates
-    [:name, [:name, :id_for_slug]]
+  def slug_candidates
+    [
+      :name,
+      [:name, :id],
+    ]
   end
 
-  def id_for_slug
-    generated_slug = normalize_friendly_id(name)
-    if Rails.env == "development"
-      things = self.class.where('slug REGEXP :pattern', pattern: "#{generated_slug}(-[0-9]+)?$")
-    else
-      things = self.class.where('slug ~ :pattern', pattern: "#{generated_slug}(-[0-9]+)?$")
-    end
-    things = things.where.not(id: id) unless new_record?
-    things.count + 1
+  def remake_slug
+    self.update_attribute(:slug, nil)
+    self.save!
   end
 
+  #You don't necessarily need this bit, but I have it in there anyways
   def should_generate_new_friendly_id?
-    name_changed? || super
+    new_record? || self.slug.nil?
   end
 
   def self.find_for_oauth(auth, signed_in_resource = nil)
