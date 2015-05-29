@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
     extend FriendlyId
-    friendly_id :slug_candidates, use: :slugged
+  friendly_id :slug_candidates, use: :slugged
+  after_create :remake_slug
+
   has_many :comments, dependent: :destroy
   has_many :posts, dependent: :destroy
   has_one :identity, dependent: :destroy
@@ -23,7 +25,6 @@ class User < ActiveRecord::Base
 
   def remake_slug
     self.update_attribute(:slug, nil)
-    self.save!
   end
 
   #You don't necessarily need this bit, but I have it in there anyways
