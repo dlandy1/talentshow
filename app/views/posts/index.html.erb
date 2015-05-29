@@ -4,14 +4,13 @@
     <%date=group[1].strftime("%B %e")%>
     <div>
     <% if date == Time.new.strftime("%B %e") %>
-         <h3 class="dater"> TODAY <span class="small"><%=date%> </span> </h3>
+         <h3 class="dater"> Today <span class="small"><%=date%> </span> </h3>
      <% elsif date == Time.new.yesterday().strftime("%B %e") %>
-        <h3 class="dater"> YESTERDAY <span class="small"><%=date%> </span> </h3>
+        <h3 class="dater"> Yesterday <span class="small"><%=date%> </span> </h3>
     <%else %>
         <h3 class="dater"> <%=day%>  <span class="small"><%=date%> </span></h3>
     <% end %>
     </div>
-<!-- hey -->
 
     <ul class="listing">
         <%posts.each do |post|%>

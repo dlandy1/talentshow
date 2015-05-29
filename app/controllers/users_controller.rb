@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.update(user_params)
         sign_in(@user == current_user ? @user : current_user, :bypass => true)
-        format.html { redirect_to @user, notice: 'Your profile was successfully updated.' }
+        format.html { redirect_to @user}
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -38,7 +38,7 @@ class UsersController < ApplicationController
         @user.skip_reconfirmation! if @user.respond_to?(:skip_confirmation)
         sign_in(@user, :bypass => true)
         UserMailer.welcome_email(@user).deliver
-        redirect_to root_url, notice: 'Your profile was successfully updated.'
+        redirect_to root_url
       else
         @show_errors = true
       end

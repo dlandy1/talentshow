@@ -125,7 +125,7 @@ a:focus{
       z-index: 100;
 }
 .dater{
-    font-family: serif;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 .seez{
   height: 35px;
@@ -244,16 +244,14 @@ a:focus{
 }
 .camnt{
   margin-right: 15px;
-    color: rgb(52, 240, 0);
+  color: #87D25A;
   font-size: 22px;
 }
 .shorten{
   margin-top: -8px;
 }
 .numba{
-  color: #47B508;
-  font-family: fantasy;
-  font-weight: bolder;
+  color: #87D25A;
 }
 .type{
     font-size: 16px;
@@ -408,6 +406,7 @@ a:focus{
   width: 100%;
   margin-left: auto;
   margin-right: auto;
+  border-radius: 50%;
   padding: 10px;
   }
   .mage{
@@ -450,3 +449,9 @@ a:focus{
   .btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open > .btn-default.dropdown-toggle {
   background-color: #C7C7C7;
 }
+.cali:hover{
+    color: white;
+  background-color: rgba(9, 9, 9, 0.36);
+  outline: none;
+}
+

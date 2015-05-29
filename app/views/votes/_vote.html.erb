@@ -3,11 +3,13 @@
                       <% else %>
                         <div class="madle vote-<%= post.id %>">
                       <% end %>
+                        <% if current_user %>
                           <%= link_to post_vote_path(post), method: :post, remote: :true do %> 
                             <div>
                                 <%= image_tag("clap.png", class: "seez") %>
                                 <% if current_user && post.already_voted?(current_user) %>
-                                <p class= "lor votedd count-<%=post.id%>" id="numb-<%=post.id%>" style="text-align: center; margin: 0px;"><%=post.points%>
+                                <p class= "lor votedd count-<%=post.id%>" id="numb-<%=post.id%>" style="text-align: center; margin: 0px;">
+                                  <%=post.points%>
                                 </p> 
                                 <% else %>
                                 <p class= "lor count-<%=post.id%>" id="numb-<%=post.id%>" style="text-align: center; margin: 0px;"><%=post.points%>
@@ -15,4 +17,19 @@
                                 <% end %>
                             </div>
                           <% end %>
+                        <% else %>
+                          <%= link_to new_user_session_path  do %>
+                            <div>
+                                <%= image_tag("clap.png", class: "seez") %>
+                                <% if current_user && post.already_voted?(current_user) %>
+                                <p class= "lor votedd count-<%=post.id%>" id="numb-<%=post.id%>" style="text-align: center; margin: 0px;">
+                                  <%=post.points%>
+                                </p> 
+                                <% else %>
+                                <p class= "lor count-<%=post.id%>" id="numb-<%=post.id%>" style="text-align: center; margin: 0px;"><%=post.points%>
+                                </p> 
+                                <% end %>
+                            </div>
+                          <% end %>
+                        <% end %>
                         </div>

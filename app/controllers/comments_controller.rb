@@ -15,9 +15,8 @@ class CommentsController < ApplicationController
         flash[:error] = "Error creating comment."
       end
     end
-
     respond_with(@comment) do |format|
-      format.html { redirect_to [@post] }
+       format.html { redirect_to [@post] }
     end
   end
 

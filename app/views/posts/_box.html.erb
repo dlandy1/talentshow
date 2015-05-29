@@ -30,8 +30,12 @@
               <span class='js-comments'>
          <%= render partial: 'comments/comment', collection: @comments.parent_comments %>
             </span>
+    <% if current_user %>
       <div class='new-comment'>
         <%= render partial: 'comments/form', locals: { post: @post, comment: @comment } %>
       </div>
+    <% else %>
+      <%= link_to "Sign in to Comment", new_user_session_path %> 
+     <% end %>
     </div>
  

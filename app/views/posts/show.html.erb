@@ -1,16 +1,26 @@
-
-  <div class="post" style="left: 40%; width: 60%;">
-     <img alt="Showtime" id="loading" src="/assets/showtime.gif">
-  <div class="pod">
-    <div class="pull-left">
-      <div class="madle"> <img alt="Clap" class="seez" src="/assets/clap.png"> 
-        <p class="cor" style="text-align: center; margin: 0px;">12</p>
-      </div>
-    </div> <%= @post.title %>
-      <span><%= @post.kind %></span>
-      <p><%= link_to "View Work", @post.url,  :target => "_blank" %></p>
-    </div>
-</div>
+<div class="screen"></div>
+<div class="post"></div>
+ <% @sorted_groups.each do |group,posts| %>
+    <%day=group[1].strftime("%A")%>
+    <%date=group[1].strftime("%B %e")%>
     <div>
-         <h3 class="dater"> TODAY <span class="small">May 26 </span> </h3>
+    <% if date == Time.new.strftime("%B %e") %>
+         <h3 class="dater"> Today <span class="small"><%=date%> </span> </h3>
+     <% elsif date == Time.new.yesterday().strftime("%B %e") %>
+        <h3 class="dater"> Yesterday <span class="small"><%=date%> </span> </h3>
+    <%else %>
+        <h3 class="dater"> <%=day%>  <span class="small"><%=date%> </span></h3>
+    <% end %>
     </div>
+
+    <ul class="listing">
+        <%posts.each do |post|%>
+                <%= render partial: 'post', locals: { post: post } %>
+        <% end %>
+    </ul>
+    <hr>
+    <% end %>
+  <div class="post" style="left: 40%; width: 60%;">
+    <%= image_tag("showtime.gif", id: 'loading' )%>
+    <%= render partial: "box", locals: { post: @post } %>
+  </div>

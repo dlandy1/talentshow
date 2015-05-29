@@ -5,7 +5,7 @@
   <div class='media-body'>
     <div class="loft">
     <small class="cament">
-      <%= subcomment.user.name %> commented <%= time_ago_in_words(subcomment.created_at) %> ago
+      <b><%= subcomment.user.name %></b> commented <%= time_ago_in_words(subcomment.created_at) %> ago
       <% if current_user %>
       <div class="trosh">
           <% if current_user == subcomment.user || current_user.id == 1 %>
