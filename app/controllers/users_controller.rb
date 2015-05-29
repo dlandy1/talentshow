@@ -42,6 +42,7 @@ class UsersController < ApplicationController
         redirect_to root_url
       else
         @show_errors = true
+        flash[:error] = "Put in your email"
       end
     end
   end
