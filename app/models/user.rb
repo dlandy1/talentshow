@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
 
   def id_for_slug
     generated_slug = normalize_friendly_id(name)
-    things = self.class.where('slug REGEXP :pattern', pattern: "#{generated_slug}(-[0-9]+)?$")
+    things = self.class.where('slug ~ :pattern', pattern: "#{generated_slug}(-[0-9]+)?$")
     things = things.where.not(id: id) unless new_record?
     things.count + 1
   end
