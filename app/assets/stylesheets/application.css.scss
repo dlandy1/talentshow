@@ -413,6 +413,7 @@ a:focus{
     height: 25px;
     width: 25px;
     margin-right: 5px;
+    border-radius: 50%;
   }
   .cament{
     text-align: left;
@@ -454,4 +455,28 @@ a:focus{
   background-color: rgba(9, 9, 9, 0.36);
   outline: none;
 }
-
+.fb{
+  width: 200px;
+  margin: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 6px;
+  border-radius: 3px;
+  background-color: #385a99;
+}
+.fb-button{
+  color: white;
+}
+.fb-button:hover{
+  text-decoration: none;
+  color:white;
+}
+.fb-button:active{
+  text-decoration: none;
+   color:white;
+}
+.shower{
+    border-radius: 50%;
+  height: 45px;
+  width: 45px;
+}

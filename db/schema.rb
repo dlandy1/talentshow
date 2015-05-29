@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150528183643) do
+ActiveRecord::Schema.define(version: 20150529174640) do
 
   create_table "artists", force: :cascade do |t|
     t.integer  "user_id"
@@ -56,6 +56,12 @@ ActiveRecord::Schema.define(version: 20150528183643) do
   end
 
   add_index "identities", ["user_id"], name: "index_identities_on_user_id"
+
+  create_table "newsletters", force: :cascade do |t|
+    t.string   "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"

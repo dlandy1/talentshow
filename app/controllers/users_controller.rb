@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   def show
     # authorize! :read, @user
     @user = User.friendly.find(params[:id])
+    @posts = @user.posts
   end
 
   # GET /users/:id/edit

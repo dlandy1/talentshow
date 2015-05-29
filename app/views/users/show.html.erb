@@ -1,0 +1,17 @@
+<div style="
+    margin: 20px 0px;">
+  <%= image_tag(@user.image, class: 'shower') %>
+   <b><%= @user.name %></b>
+</div>
+
+ <ul class="listing">
+  <% if @posts.length > 0 %>
+        <%@posts.each do |post|%>
+                <%= render partial: 'posts/post', locals: { post: post } %>
+        <% end %>
+  <% elsif %>
+     <p>You have no posts. If you know any talented performers or artists, please post them.</p>
+  <% else %>
+    <p><%= @user.name %> has no posts.</p>
+  <% end %>
+ </ul>

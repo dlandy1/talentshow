@@ -4,7 +4,10 @@
   var hand = parseInt($('#claps').text());
   $('.count-'+<%= @post.id %>).text(num+1);
   $('#claps').text(hand+1);
-   $('.horiz').append('<%= link_to image_tag(current_user.image, class: "imooge", id: "user-#{current_user.id}"), user_path(current_user) %>')
+   $('.horiz').prepend('<%= link_to image_tag(current_user.image, class: "imooge", id: "user-#{current_user.id}"), user_path(current_user) %>')
+   if ($('.imooge').length >= 22){
+    $('.imooge:last').remove();
+   }
 <% else %>
  $('.vote-'+<%= @post.id %>).css('background-color', '#D1FFB6');
  var num = parseInt($('#numb-'+<%= @post.id %>).text());
@@ -12,4 +15,7 @@
   $('.count-'+<%= @post.id %>).text(num-1);
   $('#claps').text(hand-1);
   $('#user-'+<%= current_user.id %>).remove();
+   if ($('.imooge').length() >= 3){
+    $('.imooge:last').remove();
+   }
 <% end %>

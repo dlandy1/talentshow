@@ -72,7 +72,7 @@ $(function() {
   $('.post').animate({
       left: "100%"
     }, 200);
-  $('.post').html('<img id="loading" src="assets/showtime.gif" />')
+  $('.post').append('<img id="loading" src="assets/showtime.gif" />')
   $('.screen').remove();  
 });
      $('.url').click(function() { 

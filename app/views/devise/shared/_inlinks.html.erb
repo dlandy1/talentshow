@@ -1,27 +1,17 @@
-
-
-<%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
-  <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %><br />
-<% end -%>
-
-<%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
-  <%= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name) %><br />
-<% end -%>
-
 <%- if devise_mapping.omniauthable? %>
   <%- resource_class.omniauth_providers.each do |provider| %>
     <% if provider.to_s == "facebook" %>
      <%= link_to omniauth_authorize_path(resource_name, provider), class: 'fb-button' do%>
       <div class="fb">
     <%= fa_icon "facebook-square" %>
-    <span> Sign in with Facebook </span>
+    <span> Sign up with Facebook </span>
      </div>
     <% end %>
     <% else %>
       <%= link_to omniauth_authorize_path(resource_name, provider), class: 'fb-button' do%>
           <div class="fb" style="background-color: #55ACEE;">
         <%= fa_icon "twitter" %>
-        <span> Sign in with Twitter </span>
+        <span> Sign up with Twitter </span>
             </div>
       <% end %>
      <% end %>

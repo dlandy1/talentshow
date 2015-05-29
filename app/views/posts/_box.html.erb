@@ -25,6 +25,7 @@
     </div>
   </div>
   <div class="spooc">
+     <%= render partial: "votes/votercount", locals: { post: @post, voters: @voters } %>
   </div>
   <div class="commenter">
               <span class='js-comments'>

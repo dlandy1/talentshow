@@ -262,5 +262,6 @@ Devise.setup do |config|
     config.omniauth :twitter, ENV['TWITT_DEV_KEY'], ENV['TWITT_DEV_PASSWORD']
   else
     config.omniauth :facebook, ENV['FB_KEY'], ENV['FB_SECRET']
+     config.omniauth :twitter, ENV['TWITT_KEY'], ENV['TWITT_PASSWORD']
   end
 end

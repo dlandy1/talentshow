@@ -1,7 +1,0 @@
- 
-  <b>Applaudes: (<span id="claps"><%= @voters.count %></span>):</b>
-    <div class="horiz"> 
-      <% @voters.each do |v| %>
-            <%= link_to image_tag(v.image, class: 'imooge', id: "user-#{v.id}"), user_path(v) %>
-      <% end %>
-    </div>

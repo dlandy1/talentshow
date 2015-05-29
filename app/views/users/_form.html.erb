@@ -1,0 +1,19 @@
+<%= form_for [@user] do |f| %>
+   <% if @user.errors.any? %>
+    <div class="alert alert-danger">
+      <h4>There are <%= pluralize(@user.errors.count, "error") %></h4>
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+   <% end %>
+    <div class="form-group">
+    <%= f.label :email %>
+    <%= f.text_field :email, class: 'form-control', placeholder: "Enter your first and lastname" %>
+  </div>
+   <div class="form-group">
+    <%= f.submit "Save", class: 'btn btn-sm btn-success' %>
+  </div>
+  <% end %>

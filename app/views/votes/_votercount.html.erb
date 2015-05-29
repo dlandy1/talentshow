@@ -1,0 +1,9 @@
+ 
+  <b>Applaudes: (<span id="claps"><%= @post.voters.count %></span>):</b>
+    <div class="horiz"> 
+        <%= link_to_previous_page(@voters, fa_icon('caret-left'), :remote => true, :class=>'load_more_link') %>
+      <% @voters.each do |v| %>
+            <%= link_to image_tag(v.image, class: 'imooge', id: "user-#{v.id}"), user_path(v) %>
+      <% end %>
+      <%= link_to_next_page(@voters, fa_icon('caret-right'), :remote => true, :class=>'load_more_link') %>
+    </div>
