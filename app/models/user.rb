@@ -1,8 +1,7 @@
 class User < ActiveRecord::Base
     extend FriendlyId
   friendly_id :slug_candidates, use: :slugged
-  after_create :remake_slug, on: :update
-
+  after_create :remake_slug
   has_many :comments, dependent: :destroy
   has_many :posts, dependent: :destroy
   has_one :identity, dependent: :destroy
@@ -21,6 +20,10 @@ class User < ActiveRecord::Base
       :name,
       [:name, :id],
     ]
+  end
+
+  def twitter?
+    self.email.index("twitter") 
   end
 
   def remake_slug
