@@ -136,12 +136,9 @@ a:focus{
   text-align: center;
   width: 38px;
   background-color: #D1FFB6;
-  display: table-cell;
-  padding: 5px 0px;
-  vertical-align: middle;
-  display: table-cell;
   padding: 5px 0;
   vertical-align: middle;
+  float: left;
 }
 .lor{
   text-align: center;
@@ -158,6 +155,7 @@ a:focus{
     font-size: 19px;
   font-weight: bolder;
     color: #525252;
+    width: 270px;
 }
 .container{
   max-width: 960px;
@@ -240,6 +238,7 @@ a:focus{
   font-weight: 600;
     color: #9B9B9B;
     margin: 0px;
+    width: 270px;
 }
 .post{
     z-index: 10000;
@@ -491,10 +490,11 @@ a:focus{
     padding: 20px;
   }
   .spacey{
-    font-size: 17px;
+    font-size: 15px;
+    width: 150px;
   }
   .type{
-    font-size: 14px;
-    width: 120px;
+    font-size: 13px;
+    width: 150px;
   }
 }
