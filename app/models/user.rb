@@ -28,7 +28,7 @@ class User < ActiveRecord::Base
 
   def remake_slug
     self.update_attribute(:slug, nil)
-    if !self.email.index("twitter")
+    if !self.email.index("twitter") && !self.email.index("facebook") 
       self.save!
     end
   end
