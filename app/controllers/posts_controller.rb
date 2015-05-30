@@ -39,6 +39,7 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
+      @post.update_rank
     else
     end
     respond_with(@post) do |format|
