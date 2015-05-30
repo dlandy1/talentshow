@@ -17,10 +17,17 @@
 //= require_tree .
 jQuery(document).ready(function () {
   $( ".open" ).click(function(){
-    $('.post').animate({
+    if ($(window).width() < 550){
+      $('.post').animate({
+      width: "100%",
+      left: "0%"
+    }, 50);
+    }
+   else{ $('.post').animate({
       width: "60%",
       left: "40%"
     }, 50);
+ }
   });
 
 
