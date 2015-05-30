@@ -223,35 +223,7 @@ a:focus{
   color: white;
   background-color: #D1FFB6;
 }
-@media (max-width: 500px){
-  .container{
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-  .navbar-brand{
-    font-size: 20px;
-    padding-right: 0px;
-    padding-left: 0px;
-  }
-  .navbar-nav.navbar-right > li:last-child {
-  display: none;
-  }
-  #third{
-    padding-right: 0px;
-  }
-  .post{
-    width: 100%
-  }
-  .pod{
-    padding: 20px;
-  }
-  .spacey{
-    font-size: 17px;
-  }
-  .type{
-    font-size: 12px;
-  }
-}
+
 .camnt{
   margin-right: 15px;
   color: #87D25A;
@@ -493,4 +465,34 @@ a:focus{
     border-radius: 50%;
   height: 45px;
   width: 45px;
+}
+
+@media (max-width: 500px){
+  .container{
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .navbar-brand{
+    font-size: 20px;
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+  .navbar-nav.navbar-right > li:last-child {
+  display: none;
+  }
+  #third{
+    padding-right: 0px;
+  }
+  .post{
+    width: 100%
+  }
+  .pod{
+    padding: 20px;
+  }
+  .spacey{
+    font-size: 17px;
+  }
+  .type{
+    font-size: 12px;
+  }
 }
