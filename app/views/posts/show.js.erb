@@ -4,6 +4,12 @@ if($('.screen').length == 0){
 $('body').append("<div class='screen'></div>");
  $('body').addClass('no-scroll');
  $('.post').html('<%= escape_javascript(render partial: "box", locals: { post: @post }) %>');
+ var sorc = $('.text-center > p > iframe').attr('src');
+ console.log(sorc.indexOf("http"));
+ if (sorc.indexOf("http:") >= 0) {
+  var output = [sorc.slice(0, 4), "s", sorc.slice(4)].join('');
+  $('.text-center > p > iframe').attr('src',output)  
+ };
    $('.post').resizable({
     handles: 'w'
 });
