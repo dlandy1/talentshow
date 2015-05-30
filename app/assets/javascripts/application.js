@@ -17,7 +17,7 @@
 //= require_tree .
 jQuery(document).ready(function () {
   $( ".open" ).click(function(){
-    if ($(document).width() < 550){
+    if ($(window).width() < 550){
       $('.post').animate({
       width: "100%",
       left: "0%"
