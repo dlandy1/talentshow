@@ -4,6 +4,7 @@
   var hand = parseInt($('#claps').text());
   $('.count-'+<%= @post.id %>).text(num+1);
   $('#claps').text(hand+1);
+   $('.count-'+<%= @post.id %>).addClass('votedd');
    $('.horiz').prepend('<%= link_to image_tag(current_user.image, class: "imooge", id: "user-#{current_user.id}"), user_path(current_user) %>')
    if ($('.imooge').length >= 22){
     $('.imooge:last').remove();
@@ -14,6 +15,8 @@
   var hand = parseInt($('#claps').text());
   $('.count-'+<%= @post.id %>).text(num-1);
   $('#claps').text(hand-1);
+  $('.count-'+<%= @post.id %>).removeClass('votedd');
+  console.log('.count-'+<%= @post.id %>)
   $('#user-'+<%= current_user.id %>).remove();
    if ($('.imooge').length() >= 3){
     $('.imooge:last').remove();
