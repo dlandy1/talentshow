@@ -11,11 +11,21 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.cookie
 // = require bootstrap-sprockets
 //= require jquery_ujs
 //= require jquery-ui/resizable
 //= require_tree .
+
 jQuery(document).ready(function () {
+
+   if ($.cookie('noShowWelcome')) $('.email').hide();
+    else {
+        $(".close-welcome").click(function() {
+            $(".email").fadeOut(1000);
+            $.cookie('noShowWelcome', true);    
+        });
+    }
   $( ".open" ).click(function(){
     if ($(window).width() < 550){
       $('.post').animate({

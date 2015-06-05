@@ -1,0 +1,24 @@
+<%= form_for [ newsletter ], :html => {:class => "ayo"}, remote: true do |f| %>
+     <% if newsletter.errors.any? %>
+      <div class="alert alert-danger">
+        <h4>There are <%= pluralize(newsletter.errors.count, "error") %></h4>
+        <ul>
+          <% newsletter.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+     <% end %>
+
+    <div>
+      <div class="form-group email">
+        <span class="pull-left">The best new peformers every day.</span>
+        <%= f.text_field :email, placeholder: "Your email" %>
+        <%= f.submit "Join", class: "btn btn-success"%>
+        <div class="pull-right">
+          <a href=""><%= fa_icon("close", class: "close-welcome") %></a>
+        </div>
+      </div>
+
+    </div>
+ <% end %>

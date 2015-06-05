@@ -1,0 +1,6 @@
+<% if @post.destroyed? %>
+  $('#'+<%= @post.id %>).fadeOut(500); 
+  $('#icon-'+<%= @post.id %>).fadeOut(500); 
+<% else %>
+  $('#post-' +<%= @post.id %>).prepend("<div class='alert alert-error'><%= flash[:error] %></div>");
+<% end %>

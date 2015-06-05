@@ -1,0 +1,15 @@
+ <div>
+         <h3 class="dater"> The Queue <span class="small">Accept or reject posts. </span> </h3>
+ <span class="sauce">
+     <div class="post"><%= image_tag("showtime.gif", id: 'loading' )%></div>
+     <ul class="listing" >
+        <%@posts.each do |post|%>
+                <%= render partial: 'posts/post2', locals: { post: post } %>
+        <% end %>
+    </ul>
+    <hr>
+    </span>
+     <p class="lood">
+         <%= render partial: 'posts/page2', locals: { posts: @posts } %>
+    </p>
+  </div>

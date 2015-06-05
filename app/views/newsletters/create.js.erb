@@ -1,0 +1,6 @@
+<% if @newsletter.valid? %>
+   $('.email').html("Thanks for joining the audience!");
+     $.cookie('noShowWelcome', true);    
+ <% else %>
+  $('.email').html("Not an email");
+<% end %>

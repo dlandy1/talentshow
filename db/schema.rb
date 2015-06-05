@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150529174640) do
+ActiveRecord::Schema.define(version: 20150604014600) do
 
   create_table "artists", force: :cascade do |t|
     t.integer  "user_id"
@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(version: 20150529174640) do
     t.integer  "artist_id"
     t.string   "slug"
     t.float    "rank"
+    t.boolean  "accepted"
   end
 
   add_index "posts", ["artist_id"], name: "index_posts_on_artist_id"
@@ -96,6 +97,7 @@ ActiveRecord::Schema.define(version: 20150529174640) do
     t.boolean  "artist",                 default: false
     t.string   "image"
     t.string   "slug"
+    t.boolean  "admin",                  default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

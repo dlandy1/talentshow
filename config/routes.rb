@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  get 'newsletter/create'
+
   devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
 
   resources :users, except: [:destroy, :index] do
@@ -6,12 +9,17 @@ Rails.application.routes.draw do
   
   resources :posts do
     post '/vote' => 'votes#vote', as: :vote
+    post '/aprove' => 'posts#aprove', as: :aprove
     resources :comments,  only: [:create, :destroy, :edit, :update] do
       get "/reply"  => 'comments#reply', as: :reply
       get "/cancel"  => 'comments#cancel', as: :cancel
     end
   end
 
+  resources :newsletters,  only: [:create] do
+  end
+
+  get 'queue' => 'queue#show', as: :queue
   root to: 'posts#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

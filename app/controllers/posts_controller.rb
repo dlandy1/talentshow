@@ -1,8 +1,9 @@
 class PostsController < ApplicationController
    respond_to :html, :js
   def index
-    @post_groups= Post.order('rank DESC').group_by{|post| [post.created_at.wday, post.created_at.to_date]}
+    @post_groups= Post.where(accepted: true).order('rank DESC').group_by{|post| [post.created_at.wday, post.created_at.to_date]}
     @sorted_groups =  Kaminari.paginate_array(@post_groups.sort_by { |name, age| age.first.created_at }.reverse).page(params[:page]).per(5)
+    @newsletter = Newsletter.new
   end
 
   def show
@@ -58,14 +59,19 @@ class PostsController < ApplicationController
        end
   end
 
+  def aprove
+    if current_user.admin 
+      @post = Post.friendly.find(params[:post_id])
+      @post.update_attributes(accepted: true) 
+    end
+  end
+
+
   def destroy
-    @post = Post.friendly.find(params[:id])
-     if @post.destroy
-      flash[:notice] = "#{@post.title} was deleted successfully."
-      redirect_to  root_path
-    else 
-      flash[:error] = "There was an error deleting the post."
-      redirect_to [@post]
+     @post = Post.friendly.find(params[:id])
+       if @post.destroy
+      respond_with(@post) do |format|
+      end
     end
   end
 

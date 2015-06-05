@@ -466,7 +466,46 @@ a:focus{
   height: 45px;
   width: 45px;
 }
+.email{
+  margin-top: 20px;
+  text-align: center;
+  background-color: #fff0e5;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bolder;
+  color: #525252;
+  border-radius: 4px;
+}
 
+.email > .btn {
+  padding: 1px 10px;
+  margin-top: -3px;
+  border-radius: 4px;
+}
+.email > span{
+    padding-top: 3px;
+    font-size: 15px;
+}
+#newsletter_email{
+    width: 240px;
+  border-radius: 3px;
+  background-color: #ffffff;
+  background-image: none;
+  border: 1px solid rgba(0,0,0,0.15);
+  -webkit-appearance: none;
+  color: #2c2c2c;
+  outline: 0;
+  padding: 2px 7px;
+}
+.close-welcome{
+    margin-top: 5px;
+  color: rgb(120, 1, 0);
+}
+@media (max-width: 660px){
+  .email{
+    display: none;
+  }
+}
 @media (max-width: 500px){
   .container{
     padding-left: 10px;
@@ -486,9 +525,6 @@ a:focus{
   .post{
     width: 100%
   }
-  .pod{
-    padding: 20px;
-  }
   .spacey{
     font-size: 15px;
     width: 150px;
@@ -498,3 +534,4 @@ a:focus{
     width: 150px;
   }
 }
+

@@ -6,4 +6,8 @@ class UserMailer < ActionMailer::Base
     @url  = 'http://example.com/login'
     mail(to: @user.email, subject: 'Welcome')
   end
+
+  def news
+    mail(to: '', bcc: Newsletter.all.collect(&:email), subject: 'Welcome')
+  end
 end

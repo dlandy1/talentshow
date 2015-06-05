@@ -1,5 +1,8 @@
  <span class="sauce">
  <div class="post"><%= image_tag("showtime.gif", id: 'loading' )%></div>
+ <div>
+    <%= render partial: 'newsletters/form', locals: {newsletter: @newsletter} %>
+ </div>
  <% @sorted_groups.each do |group,posts| %>
     <%day=group[1].strftime("%A")%>
     <%date=group[1].strftime("%B %e")%>
@@ -16,4 +19,3 @@
     <p class="lood">
          <%= render partial: 'page' %>
     </p>
-<!-- hi -->
