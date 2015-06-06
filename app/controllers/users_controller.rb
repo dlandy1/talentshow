@@ -39,7 +39,6 @@ class UsersController < ApplicationController
         @user.remake_slug
         @user.skip_reconfirmation! if @user.respond_to?(:skip_confirmation)
         sign_in(@user, :bypass => true)
-        UserMailer.welcome_email(@user).deliver
         redirect_to root_url
       else
         @show_errors = true

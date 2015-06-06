@@ -20,9 +20,6 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def after_sign_in_path_for(resource)
     if resource.email_verified?
-      if resource.sign_in_count == 1
-        UserMailer.welcome_email(@user).deliver
-      end
       super resource
     else
       finish_signup_path(resource)
