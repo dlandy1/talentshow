@@ -82,8 +82,8 @@ Rails.application.configure do
   config.serve_static_assets = true
   config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect'
   config.assets.compile = true
-   config.app_domain = 'localhost:3000'
-  config.action_mailer.default_url_options = { host: 'localhost:3000' }
+  config.app_domain = 'http://www.talentshow.io/'
+  config.action_mailer.default_url_options = { host: 'http://www.talentshow.io/' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
   address:              'smtp.gmail.com',
