@@ -8,6 +8,8 @@ class UserMailer < ActionMailer::Base
   end
 
   def news
-    mail(to: '', bcc: Newsletter.all.collect(&:email), subject: 'Welcome')
+    @posts = Post.where("created_at >= ?", Time.zone.now.beginning_of_day).order('rank DESC').page(params[:page]).per(3)
+    mail(to: '', bcc: Newsletter.all.collect(&:email), subject: 'Top Performers of the day')
+
   end
 end

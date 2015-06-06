@@ -6,5 +6,8 @@
   <body style="color: black;">
     <h1>Ayoo Talentshow,</h1>
     <p>Thanks for joining and have a great day!</p>
+    <%= @posts.each do |p| %>
+      <p><%=p.title %> <%=p.kind %> <%=p.points %></p>
+    <% end %>
   </body>
 </html>
