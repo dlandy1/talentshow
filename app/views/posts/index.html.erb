@@ -1,8 +1,11 @@
  <span class="sauce">
  <div class="post"><%= image_tag("showtime.gif", id: 'loading' )%></div>
+ <% if curren_user %>
+ <% else %>
  <div>
     <%= render partial: 'newsletters/form', locals: {newsletter: @newsletter} %>
  </div>
+ <% end %>
  <% @sorted_groups.each do |group,posts| %>
     <%day=group[1].strftime("%A")%>
     <%date=group[1].strftime("%B %e")%>
