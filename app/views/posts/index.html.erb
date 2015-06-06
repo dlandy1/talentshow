@@ -1,6 +1,6 @@
  <span class="sauce">
  <div class="post"><%= image_tag("showtime.gif", id: 'loading' )%></div>
- <% if curren_user %>
+ <% if current_user %>
  <% else %>
  <div>
     <%= render partial: 'newsletters/form', locals: {newsletter: @newsletter} %>
