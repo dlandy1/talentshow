@@ -4,10 +4,33 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body style="color: black;">
-    <h1>Ayoo Talentshow,</h1>
-    <p>Thanks for joining and have a great day!</p>
-    <%= @posts.each do |p| %>
-      <p><%=p.title %> <%=p.kind %> <%=p.points %></p>
+    <h1 style="text-align: center;background-color: #D25651;color: white;padding: 15px;border-radius: 6px;">Top Performers Today</h1>
+    <% @posts.each do |p| %>
+    <div>
+       <%= link_to post_url(p) do %>
+                  <div style="display: table; width: 100%;">
+                        <div>
+                          <p style="text-align: center; margin: 0px;"><%=post.points%> </p> 
+                            </div>
+                        <%= link_to post_path(post), method: :get, remote: :true do%>
+                                <div class="open" style="padding: 7px 5px;">
+                                    <div style="margin-left: 5px;" class="inlines">
+                                        <p class="spacey">
+                                            <span class="url" id="<%=post.url%>"><%=post.title%></span>
+                                        </p>
+                                        <p class="type"><%=post.kind%></p>
+                                    </div>
+                                    <div class="pull-right" style="margin-top: 11px;">
+                                        <span class="numba"><%=post.comments.count%></span>
+                                        <%= fa_icon("comment-o", class: "camnt") %>
+                                        <%= image_tag(post.user.image, class: "imge shorten") %>
+                                    </div>
+                                </div>
+                        <%end%>
+                    </div>
+       <% end %>
+    </div>
     <% end %>
   </body>
 </html>
+
