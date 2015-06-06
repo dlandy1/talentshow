@@ -19,9 +19,9 @@
    <div class="social">
     <div class="pull-left"><%= link_to user_path(@user) do %>  <%= image_tag(@user.image, class: 'imooge') %> <%= @user.name %> <% end %> <small> posted <%= time_ago_in_words(@post.created_at) %> ago</small>  </div>
      <div class=" pull-right">
-      <div class="fb-share-button" data-href="http://localhost:3000/posts/justin-bier" data-layout="button"></div>
-        <a href="https://twitter.com/share" class="twitter-share-button" data-via="DanOliverLandy" data-count="none">Tweet</a>
-        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+      <div class="fb-share-button" data-href="<%= @post_path %>" data-layout="button"></div>
+       <a href="https://twitter.com/share" class="twitter-share-button" data-count="none" data-hashtags="talented">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
     </div>
   </div>
   <div class="spooc">
