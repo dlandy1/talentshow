@@ -62,6 +62,7 @@ class PostsController < ApplicationController
   def aprove
     if current_user.admin 
       @post = Post.friendly.find(params[:post_id])
+       @post.update_rank
       @post.update_attributes(accepted: true) 
     end
   end
