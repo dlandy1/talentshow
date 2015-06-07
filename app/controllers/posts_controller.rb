@@ -64,6 +64,7 @@ class PostsController < ApplicationController
       @post = Post.friendly.find(params[:post_id])
        @post.update_rank
       @post.update_attributes(accepted: true) 
+       UserMailer.accept(@post.user.email, @post).deliver
     end
   end
 
