@@ -534,7 +534,13 @@ a:focus{
     width: 150px;
   }
   .psst{
-    max-height: 400px;
+    max-height: 430px;
   }
+  .psst > div > iframe {
+    max-height: 300px;
+  }
+   .psst > iframe {
+     max-height: 300px;
+   }
 }
 
