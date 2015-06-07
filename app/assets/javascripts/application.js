@@ -93,7 +93,8 @@ $(function() {
   $('.screen').remove();  
 });
      $('.url').click(function() { 
-        window.open($('.url').attr('id'));
+        var click = $(this)
+        window.open(click.attr('id'));
      });
 
 });
