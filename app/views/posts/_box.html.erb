@@ -12,7 +12,7 @@
    </div>
 
    <% if @post.url.index("youtube.com/watch") ||  @post.url.index("vimeo") ||  @post.url.index("soundcloud") %>
-      <div class="text-center" style="background-color: black;">
+      <div class="text-center psst" style="background-color: black;">
            <%= @post.url_html %>
       </div>
     <% end %>
