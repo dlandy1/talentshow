@@ -1,13 +1,12 @@
-<% @sorted_groups.each do |group,posts|   %>
+<% @sorted_groups.each do |group, posts|   %>
  <%day=group[1].strftime("%A")%>
  <%date=group[1].strftime("%B %e")%>
-  <%id=group[1].strftime("%B-%e")%>
+  <%id=group[1].strftime("%Y%m%d")%>
  $('.sauce').append("<%= escape_javascript(render partial: 'date', locals: { date: date, day: day } ) %>")
   <% posts.each do |psst|%>
     $('.sauce').append("<ul class='listing' id='<%= id %>'></ul>")
-    $('#<%=id%>').append("<%=escape_javascript(render partial: 'post', locals: { post: psst }) %>")
+    $('#'+<%= id %>).append("<%=escape_javascript(render partial: 'post', locals: { post: psst }) %>")
   <% end %>
 <% end %>
-
 
 $('.lood').html("<%= escape_javascript(render partial: 'page') %>");
