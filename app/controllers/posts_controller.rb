@@ -16,7 +16,7 @@ class PostsController < ApplicationController
     @voters = Kaminari.paginate_array(@post.voters).page(params[:page]).per(20)
     @comment = Comment.new
     @post_groups= Post.order('rank DESC').group_by{|post| [post.created_at.wday, post.created_at.to_date]}
-    @sorted_groups = @post_groups.sort_by { |name, age| age.first.created_at }.reverse
+    @sorted_groups =Kaminari.paginate_array(@post_groups.sort_by { |name, age| age.first.created_at }.reverse).page(params[:page]).per(5)
     respond_with(@post) do |format|
     end
   end
