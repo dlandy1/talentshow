@@ -33,7 +33,8 @@ jQuery(document).ready(function () {
       left: "0%"
     }, 50);
     }
-   else{ $('.post').animate({
+   else{
+    $('.post').animate({
       width: "60%",
       left: "40%"
     }, 50);

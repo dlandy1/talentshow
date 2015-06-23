@@ -7,6 +7,18 @@ $('body').append("<div class='screen'></div>");
     $('.post').resizable({
     handles: 'w'
 });
+    if ($(window).width() < 550){
+      $('.post').animate({
+      width: "100%",
+      left: "0%"
+    }, 50);
+    }
+   else{
+    $('.post').animate({
+      width: "60%",
+      left: "40%"
+    }, 50);
+ }
  if($( ".text-center > p > iframe" ).length){
    var sorc = $('.text-center > p > iframe').attr('src');
    if (sorc.indexOf("http:") >= 0){
