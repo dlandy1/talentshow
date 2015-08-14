@@ -8,6 +8,7 @@ class Post < ActiveRecord::Base
   validates :title, length: {minimum: 2, maximum: 45}, presence: true
   validates :kind, length: {minimum: 2, maximum: 45}, presence: true
   validates :url, :format => URI::regexp(%w(http https))
+  
 
   auto_html_for :url do
     html_escape
