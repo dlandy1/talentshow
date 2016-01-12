@@ -28,9 +28,9 @@
      <%= render partial: "votes/votercount", locals: { post: @post, voters: @voters } %>
   </div>
   <div class="commenter">
-              <span class='js-comments'>
+        <span class='js-comments'>
          <%= render partial: 'comments/comment', collection: @comments.parent_comments %>
-            </span>
+        </span>
     <% if current_user %>
       <div class='new-comment'>
         <%= render partial: 'comments/form', locals: { post: @post, comment: @comment } %>
