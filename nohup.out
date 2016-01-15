@@ -21,3 +21,7 @@
 29921:M 12 Jan 02:13:54.492 # Server started, Redis version 3.0.1
 29921:M 12 Jan 02:13:54.492 * DB loaded from disk: 0.000 seconds
 29921:M 12 Jan 02:13:54.493 * The server is now ready to accept connections on port 6379
+29921:M 12 Jan 04:03:46.069 * 1 changes in 3600 seconds. Saving...
+29921:M 12 Jan 04:03:46.069 * Background saving started by pid 30266
+30266:C 12 Jan 04:03:46.129 * DB saved on disk
+29921:M 12 Jan 04:03:46.174 * Background saving terminated with success
