@@ -75,4 +75,10 @@ class Post < ActiveRecord::Base
        update_attribute(:rank, new_rank)
    end
 
+   def vine_show
+    if self.url.index("vine")
+      return "<iframe src='#{self.url}/embed/simple?audio=1' width='600' height='600' frameborder='0'></iframe><script src='https://platform.vine.co/static/scripts/embed.js'></script>"
+    end
+   end
+
 end

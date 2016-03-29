@@ -25,3 +25,49 @@
 29921:M 12 Jan 04:03:46.069 * Background saving started by pid 30266
 30266:C 12 Jan 04:03:46.129 * DB saved on disk
 29921:M 12 Jan 04:03:46.174 * Background saving terminated with success
+5161:C 24 Jan 21:23:07.874 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+5161:M 24 Jan 21:23:07.876 * Increased maximum number of open files to 10032 (it was originally set to 256).
+                _._                                                  
+           _.-``__ ''-._                                             
+      _.-``    `.  `_.  ''-._           Redis 3.0.1 (00000000/0) 64 bit
+  .-`` .-```.  ```\/    _.,_ ''-._                                   
+ (    '      ,       .-`  | `,    )     Running in standalone mode
+ |`-._`-...-` __...-.``-._|'` _.-'|     Port: 6379
+ |    `-._   `._    /     _.-'    |     PID: 5161
+  `-._    `-._  `-./  _.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |           http://redis.io        
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |                                  
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+      `-._    `-.__.-'    _.-'                                       
+          `-._        _.-'                                           
+              `-.__.-'                                               
+
+5161:M 24 Jan 21:23:07.881 # Server started, Redis version 3.0.1
+5161:M 24 Jan 21:23:07.883 * DB loaded from disk: 0.001 seconds
+5161:M 24 Jan 21:23:07.883 * The server is now ready to accept connections on port 6379
+4475:C 28 Mar 23:58:56.313 # Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf
+4475:M 28 Mar 23:58:56.316 * Increased maximum number of open files to 10032 (it was originally set to 256).
+                _._                                                  
+           _.-``__ ''-._                                             
+      _.-``    `.  `_.  ''-._           Redis 3.0.1 (00000000/0) 64 bit
+  .-`` .-```.  ```\/    _.,_ ''-._                                   
+ (    '      ,       .-`  | `,    )     Running in standalone mode
+ |`-._`-...-` __...-.``-._|'` _.-'|     Port: 6379
+ |    `-._   `._    /     _.-'    |     PID: 4475
+  `-._    `-._  `-./  _.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |           http://redis.io        
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+ |`-._`-._    `-.__.-'    _.-'_.-'|                                  
+ |    `-._`-._        _.-'_.-'    |                                  
+  `-._    `-._`-.__.-'_.-'    _.-'                                   
+      `-._    `-.__.-'    _.-'                                       
+          `-._        _.-'                                           
+              `-.__.-'                                               
+
+4475:M 28 Mar 23:58:56.322 # Server started, Redis version 3.0.1
+4475:M 28 Mar 23:58:56.323 * DB loaded from disk: 0.001 seconds
+4475:M 28 Mar 23:58:56.323 * The server is now ready to accept connections on port 6379
